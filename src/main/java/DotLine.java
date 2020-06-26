@@ -13,7 +13,16 @@ public class DotLine extends ArrayList<Square> {
             this.add(new Square(Square.white));
         }
         center = size / 2;
-        this.set(center, new Square(Square.black));
+    }
 
+    public void setPoint(int x, int value) {
+        if (x < 0 || x >= size) {
+            return;
+        }
+        if (value == 0) {
+            this.set(x, new Square(Square.black));
+            return;
+        }
+        this.set(x,new Square(Square.white));
     }
 }
